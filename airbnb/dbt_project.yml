@@ -32,6 +32,6 @@ models:
     # Staging layer: inline into downstream models (no warehouse object)
     +materialized: view
     src:
-      +materialized: view
+      +materialized: ephemeral
     dim:
       +materialized: table
