@@ -27,8 +27,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
 # Default materialization is view; override per-folder or in model files with config().
-# models:
-#   airbnb:
-#     # Staging layer: inline into downstream models (no warehouse object)
-#     src:
-#       +materialized: ephemeral
+models:
+  airbnb:
+    # Staging layer: inline into downstream models (no warehouse object)
+    +materialized: view
+    src:
+      +materialized: view
+    dim:
+      +materialized: table
